@@ -1,7 +1,7 @@
 {
-  "name": "express-4.x-local-example",
+  "name": "keep-password-secret",
   "version": "0.0.0",
-  "description": "Express 4.x app using Passport for authentication with username and password.",
+  "description": "Example site for showing how to prevent accidentally revealing passwords during Cypress tests",
   "keywords": [
     "example",
     "express",
@@ -13,13 +13,13 @@
     "start": "node ./server",
     "dev": "start-test 3000 'cypress open'"
   },
-  "homepage": "https://github.com/passport/express-4.x-local-example",
+  "homepage": "https://github.com/bahmutov/keep-password-secret",
   "repository": {
     "type": "git",
-    "url": "git://github.com/passport/express-4.x-local-example.git"
+    "url": "git://github.com/bahmutov/keep-password-secret.git"
   },
   "bugs": {
-    "url": "https://github.com/passport/express-4.x-local-example/issues"
+    "url": "https://github.com/bahmutov/keep-password-secret/issues"
   },
   "dependencies": {
     "body-parser": "^1.19.0",

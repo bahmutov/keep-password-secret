@@ -7,20 +7,5 @@ it('logs in', () => {
 
   cy.contains('a', 'profile').should('be.visible').click()
   cy.url().should('match', /profile$/)
-})
-
-it('logs in using cy.request', () => {
-  cy.request({
-    method: 'POST',
-    url: '/login',
-    form: true,
-    body: {
-      username: 'jack',
-      password: 'secret'
-    }
-  })
-  cy.getCookie('connect.sid').should('exist')
-
-  // now visit the profile page
-  cy.visit('/profile').contains('Email: jack@example.com')
+  cy.contains('Email: jack@example.com')
 })
