@@ -48,6 +48,7 @@ var app = express();
 // Configure view engine to render EJS templates.
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
+app.use(express.static('node_modules'));
 
 // Use application-level middleware for common functionality, including
 // logging, parsing, and session handling.
@@ -70,13 +71,13 @@ app.get('/login',
   function(req, res){
     res.render('login');
   });
-  
-app.post('/login', 
+
+app.post('/login',
   passport.authenticate('local', { failureRedirect: '/login' }),
   function(req, res) {
     res.redirect('/');
   });
-  
+
 app.get('/logout',
   function(req, res){
     req.logout();
@@ -90,3 +91,4 @@ app.get('/profile',
   });
 
 app.listen(3000);
+console.log('listening at port 3000')
