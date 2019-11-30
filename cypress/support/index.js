@@ -1,20 +1,27 @@
-// ***********************************************************
-// This example support/index.js is processed and
-// loaded automatically before your test files.
-//
-// This is a great place to put global configuration and
-// behavior that modifies Cypress.
-//
-// You can change the location of this file or turn off
-// automatically serving support files with the
-// 'supportFile' configuration option.
-//
-// You can read more here:
-// https://on.cypress.io/configuration
-// ***********************************************************
+/**
+ * Logs the user by making API call to POST /login.
+ * Make sure "cypress.json" + CYPRESS_ environment variables
+ * have username and password values set.
+ */
+export const login = () => {
+  const username = Cypress.env('username')
+  const password = Cypress.env('password')
 
-// Import commands.js using ES2015 syntax:
-import './commands'
+  // it is ok for the username to be visible in the Command Log
+  expect(username, 'username was set').to.be.a('string').and.not.be.empty
+  // but the password value should not be shown
+  if (typeof password !== 'string' || !password) {
+    throw new Error('Missing password value, set using CYPRESS_password=...')
+  }
 
-// Alternatively you can use CommonJS syntax:
-// require('./commands')
+  cy.request({
+    method: 'POST',
+    url: '/login',
+    form: true,
+    body: {
+      username,
+      password
+    }
+  })
+  cy.getCookie('connect.sid').should('exist')
+}
