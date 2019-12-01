@@ -5,6 +5,7 @@ workflows:
   build:
     jobs:
       - cypress/run:
+          context: keep-password-secret
           start: 'npm start'
           wait-on: 'http://localhost:3000'
           # save test run videos and screenshots on CircleCI
