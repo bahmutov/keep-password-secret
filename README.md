@@ -2,6 +2,8 @@
 
 > Example site for showing how to prevent accidentally revealing passwords during Cypress tests
 
+Read [Keep passwords secret in E2E tests](https://glebbahmutov.com/blog/keep-passwords-secret-in-e2e-tests/).
+
 Actual login and password: `jack` and `secret`
 
 Originally cloned from [passport/express-4.x-local-example](https://github.com/passport/express-4.x-local-example)
