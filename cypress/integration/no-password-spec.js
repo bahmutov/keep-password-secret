@@ -27,5 +27,5 @@ it('logs in using env variables', () => {
     .should('be.visible')
     .click()
   cy.url().should('match', /profile$/)
-  cy.contains('Email: jack@example.com')
+  cy.contains('Email: jack@example.com2')
 })

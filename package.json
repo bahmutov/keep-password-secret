@@ -11,7 +11,8 @@
   "license": "Unlicense",
   "scripts": {
     "start": "node ./server",
-    "dev": "start-test 3000 'cypress open'"
+    "dev": "start-test 3000 'cypress open'",
+    "test": "start-test 3000 'cypress run'"
   },
   "homepage": "https://github.com/bahmutov/keep-password-secret",
   "repository": {
@@ -34,6 +35,7 @@
   },
   "devDependencies": {
     "cypress": "3.7.0",
+    "cypress-failed-log": "2.5.1",
     "prettier": "1.19.1",
     "start-server-and-test": "1.10.6"
   }

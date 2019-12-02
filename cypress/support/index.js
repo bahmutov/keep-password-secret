@@ -1,3 +1,5 @@
+require('cypress-failed-log')
+
 /**
  * Logs the user by making API call to POST /login.
  * Make sure "cypress.json" + CYPRESS_ environment variables

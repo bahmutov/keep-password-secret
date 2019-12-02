@@ -6,3 +6,6 @@
 # Node.js
 node_modules/
 npm-debug.log
+cypress/videos
+cypress/logs/
+cypress/screenshots/
